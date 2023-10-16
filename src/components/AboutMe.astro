@@ -3,11 +3,12 @@ import BaseSection from "./BaseSection.astro";
 import { Image } from "astro:assets";
 import me from "../assets/img/me.png"
 ---
-<BaseSection>
+<BaseSection id="about-me">
   <div class="content-wrapper">
     <div class="about">
       <h1>CRISTIAN<br/>SANTOS</h1>
-      <p>I'm Cristian Santos, a frontend enthusiast with over three years of fullstack experience. Proficient in JavaScript and TypeScript, I thrive on turning ideas into code. Let's build something amazing together.</p>
+      <p>I'm Cristian Santos, a frontend enthusiast with over three years of fullstack experience. I thrive on turning ideas into code.</p>
+      <p>Let's build something amazing <span>together.</span></p>
     </div>
     <div class="logoWrapper">
       <Image src={me} alt="Cristian 8bits coding">
@@ -17,10 +18,10 @@ import me from "../assets/img/me.png"
 
 <style>
   .content-wrapper {
-    height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: calc(100vh);
   }
   .about, .logoWrapper {
     display: flex;
@@ -41,7 +42,13 @@ import me from "../assets/img/me.png"
   p {
     max-width: 70%;
     text-align: end;
-    color: white;
+    color: #ababab;
     font-size: 1.5em;
+    margin: 5px 0;
+    text-wrap: balance;
+  }
+
+  span {
+    color: white;
   }
 </style>

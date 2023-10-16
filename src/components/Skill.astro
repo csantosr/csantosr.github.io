@@ -1,0 +1,62 @@
+---
+import { type Skill, type SkillType } from "./Skills.astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  skill: Skill,
+}
+
+const MAP_SKILL_TYPE: Record<SkillType, string> = {
+  cloud: 'Cloud',
+  DB: 'Database',
+  frame: 'Framework',
+  lang: 'Language',
+  SO: 'Operative System',
+  util: 'Util'
+}
+
+const { skill } = Astro.props;
+
+
+---
+<div class="skill visible">
+  <div class="">
+    <h2>{skill.name}</h2>
+    <span>{MAP_SKILL_TYPE[skill.type]}</span>
+  </div>
+  <Image src={skill.img} alt={`${skill.name} logo`} class="img"/>
+</div>
+<style define:vars={{dominant: skill.dominantColor}}>
+  .skill {
+    border-radius: 5px;
+    border: 1px solid var(--dominant);
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    animation: 0.5s ease-out 0s 1 skillAppear;
+  }
+  
+  @keyframes skillAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h2 {  
+    margin: 0;
+  }
+  span {
+    color: #bababa;
+  }
+  img {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+  }
+</style>

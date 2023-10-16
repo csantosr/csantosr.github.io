@@ -5,8 +5,8 @@
 <header>
   <span class="logo">CS</span>
   <nav>
-    <a href="">About me</a>
-    <a href="">Skills</a>
+    <a href="#about-me">About me</a>
+    <a href="#skills">Skills</a>
     <a href="">Experience</a>
     <a href="">Projects</a>
   </nav>
@@ -21,8 +21,10 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 50px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     backdrop-filter: blur(10px);
   }
 
@@ -48,6 +50,7 @@
     padding: 13px 10px;
     text-align: center;
     margin: auto 0 auto 0;
+		scroll-behavior: smooth;
   }
 
   a:hover {

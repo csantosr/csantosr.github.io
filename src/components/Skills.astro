@@ -1,0 +1,195 @@
+---
+import BaseSection from "./BaseSection.astro";
+import Skill from "./Skill.astro";
+import DynamoDB from "../assets/img/lang/DynamoDB.png"
+import angular from "../assets/img/lang/angular.png"
+import aws from "../assets/img/lang/aws.png"
+import c from "../assets/img/lang/c.png"
+import cdk from "../assets/img/lang/cdk.png"
+import cpp from "../assets/img/lang/cpp.png"
+import django from "../assets/img/lang/django.png"
+import docker from "../assets/img/lang/docker.png"
+import gcloud from "../assets/img/lang/gcloud.png"
+import js from "../assets/img/lang/js.png"
+import lambda from "../assets/img/lang/lambda.png"
+import linux from "../assets/img/lang/linux.png"
+import mongo from "../assets/img/lang/mongo.png"
+import nest from "../assets/img/lang/nest.png"
+import node from "../assets/img/lang/node.png"
+import postgresql from "../assets/img/lang/postgresql.png"
+import py from "../assets/img/lang/py.png"
+import react from "../assets/img/lang/react.png"
+import sam from "../assets/img/lang/sam.png"
+import terraform from "../assets/img/lang/terraform.png"
+import ts from "../assets/img/lang/ts.png"
+
+export type SkillType = 'lang' | 'frame' | 'SO' | 'util' | 'cloud' | 'DB';
+export interface Skill {
+  name: string;
+  img: ImageMetadata;
+  type: SkillType;
+  dominantColor: string;
+}
+
+const skills: Skill[] = [
+  {
+    name: 'JavaScript',
+    type: 'lang',
+    img: js,
+    dominantColor: '#f0db4f',
+  },
+  {
+    name: 'TypeScript',
+    type: 'lang',
+    img: ts,
+    dominantColor: '#3178c6'
+  },
+  {
+    name: 'React',
+    type: 'frame',
+    img: react,
+    dominantColor: '#61dafb'
+  },
+  {
+    name: 'React Native',
+    type: 'frame',
+    img: react,
+    dominantColor: '#61dafb'
+  },
+  {
+    name: 'Python',
+    type: 'lang',
+    img: py,
+    dominantColor: '#3571a3',
+  },
+  {
+    name: 'Django',
+    type: 'frame',
+    img: django,
+    dominantColor: '#092E20',
+  },
+  {
+    name: 'AWS',
+    type: 'cloud',
+    img: aws,
+    dominantColor: '#ff9900',
+  },
+  {
+    name: 'AWS CDK',
+    type: 'util',
+    img: cdk,
+    dominantColor: '#69afca',
+  },
+  {
+    name: 'Terraform',
+    type: 'util',
+    img: terraform,
+    dominantColor: '#623ce4',
+  },
+  {
+    name: 'Lambda',
+    type: 'util',
+    img: lambda,
+    dominantColor: '#e6790c',
+  },
+  {
+    name: 'DynamoDB',
+    type: 'DB',
+    img: DynamoDB,
+    dominantColor: '#2272ba',
+  },
+  {
+    name: 'PostgreSQL',
+    type: 'DB',
+    img: postgresql,
+    dominantColor: '#336791',
+  },
+  {
+    name: 'MongoDB',
+    type: 'DB',
+    img: mongo,
+    dominantColor: '#439934',
+  },
+  {
+    name: 'Google Cloud',
+    type: 'cloud',
+    img: gcloud,
+    dominantColor: '#4285f4',
+  },
+  {
+    name: 'C',
+    type: 'lang',
+    img: c,
+    dominantColor: '#649ad2',
+  },
+  {
+    name: 'C++',
+    type: 'lang',
+    img: cpp,
+    dominantColor: '#659ad2'
+  },
+  {
+    name: 'NodeJS',
+    type: 'lang',
+    img: node,
+    dominantColor: '#539e43',
+  },
+  {
+    name: 'Linux',
+    type: 'SO',
+    img: linux,
+    dominantColor: '#fdfdfb',
+  },
+  {
+    name: 'Angular',
+    type: 'frame',
+    img: angular,
+    dominantColor: '#c3002f'
+  },
+  {
+    name: 'AWS SAM',
+    type: 'frame',
+    img: sam,
+    dominantColor: '#917e6d',
+  },
+  {
+    name: 'Docker',
+    type: 'util',
+    img: docker,
+    dominantColor: '#1D63ED'
+  },
+  {
+    name: 'NestJS',
+    type: 'frame',
+    img: nest,
+    dominantColor: '#e0234e'
+  }
+]
+---
+<BaseSection id="skills">
+  <div class="content-wrapper">
+    <h1>Skills</h1>
+    <div class="skills-wrapper">
+      {skills.map(skill => <Skill skill={skill}/>)}
+    </div>
+  </div>
+</BaseSection>
+
+<style>
+  .content-wrapper {
+    padding: 50px;
+  }
+  h1 {
+    color: white;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-size: 3rem;
+    line-height: 1em;
+  }
+  .skills-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+  }
+</style>
